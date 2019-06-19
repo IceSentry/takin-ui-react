@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Tabs, TabsRouteView } from './components/Tabs'
+
+const StatusBar = (props: { className: string }) => {
+  return (<div className={props.className}>Status bar</div>)
+}
+
+const EStop = () => {
+  return <div>EStop</div>
+}
+
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div id="container">
+        <Tabs />
+        <div id="view">
+          <TabsRouteView />
+          <StatusBar className="status-bar" />
+          <div className="right-sidebar">
+            <EStop />
+          </div>
+        </div>
+      </div>
+    </Router>
   );
 }
 

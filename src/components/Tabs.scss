@@ -1,0 +1,14 @@
+@import "../assets/theme/_variables.scss";
+
+.custom-tabs {
+  display: grid;
+  grid-template-columns: auto 120px;
+  .tabs#header {
+    margin-bottom: 0px;
+  }
+  .logo {
+    border-bottom: 1px solid $text;
+    padding-top: 3px;
+    padding-right: 3px;
+  }
+}

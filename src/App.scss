@@ -1,0 +1,40 @@
+@import "assets/theme/_variables.scss";
+
+$e-stop-width: 70px;
+
+html {
+  overflow-y: hidden !important;
+}
+
+body {
+  display: grid;
+  align-content: stretch;
+}
+
+#container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow: auto;
+
+  #view {
+    overflow: auto;
+
+    display: grid;
+    grid-template-areas:
+      'v e'
+      'f e';
+    grid-template-columns: auto $e-stop-width;
+    grid-template-rows: auto 20px;
+
+    &:first-child {
+      grid-area: v;
+    }
+    .status-bar {
+      grid-area: f;
+    }
+    .right-sidebar {
+      grid-area: e;
+    }
+  }
+}
